@@ -1,0 +1,266 @@
+:root {
+    --text-color: #333;
+    --link-color: #0066cc;
+    --secondary-text: #666;
+    --border-color: #eaeaea;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* Header */
+header {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.profile-pic {
+    width: 280px;
+    height: 280px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.02);
+}
+
+.name-container {
+    position: relative;
+    height: 1.3em;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+}
+
+.name-main, .name-alt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #000;
+    white-space: nowrap;
+    animation: nameTransition 8s infinite ease-in-out;
+}
+
+.name-alt {
+    opacity: 0;
+    animation-delay: 4s;
+}
+
+@keyframes nameTransition {
+    0%, 40% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    45%, 95% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+.contact-links {
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+}
+
+.contact-links a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    margin-top: 40px;
+    color: #000;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 25px;
+}
+
+.item-title {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+    color: #000;
+}
+
+.item-subtitle {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 1rem;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: 5px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.item-description li {
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.item-description li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-text);
+}
+
+/* Portfolio */
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-title {
+    font-weight: 700;
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+    color: #000;
+}
+
+.portfolio-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.portfolio-links {
+    font-size: 0.9rem;
+}
+
+.portfolio-links a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.portfolio-links a:hover {
+    text-decoration: underline;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-item strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.skill-list {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 20px;
+    }
+    header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    p {
+        text-align: left;
+    }
+}
