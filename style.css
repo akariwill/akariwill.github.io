@@ -239,6 +239,32 @@ li {
     color: #444;
 }
 
+/* Certificates */
+.certificate-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.certificate-item {
+    margin-bottom: 20px;
+}
+
+.embed-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.embed-wrapper iframe {
+    border: none;
+    display: block;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .container {
