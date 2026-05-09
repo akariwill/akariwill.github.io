@@ -102,18 +102,81 @@ h1 {
     margin-bottom: 15px;
 }
 
-.contact-links {
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-primary, .contact-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.location {
     font-size: 0.95rem;
     color: var(--secondary-text);
+    font-weight: 600;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.contact-links li {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-links li:not(:last-child)::after {
+    content: "•";
+    margin-left: 15px;
+    color: var(--border-color);
+}
+
+.contact-social .contact-links {
+    gap: 20px;
+}
+
+.contact-social .contact-links li:not(:last-child)::after {
+    content: none;
+}
+
+.contact-social .contact-links i {
+    font-size: 1.3rem;
+    width: auto;
 }
 
 .contact-links a {
     color: var(--link-color);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.2s ease;
 }
 
-.contact-links a:hover {
-    text-decoration: underline;
+.contact-social .contact-links a:hover {
+    transform: scale(1.2);
+}
+
+.location i, .contact-links i {
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+    color: var(--secondary-text);
+}
+
+.contact-links a:hover i {
+    color: var(--link-color);
 }
 
 /* Sections */
@@ -204,6 +267,14 @@ li {
     display: block;
 }
 
+.portfolio-tech {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
 .portfolio-links {
     font-size: 0.9rem;
 }
@@ -244,6 +315,28 @@ li {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.more-certificates {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-more {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-more:hover {
+    background-color: #333;
+    transform: translateY(-2px);
 }
 
 .certificate-item {
