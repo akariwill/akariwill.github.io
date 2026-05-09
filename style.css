@@ -36,8 +36,8 @@ header {
 }
 
 .profile-pic {
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 250px;
     border-radius: 12px;
     object-fit: cover;
     border: 1px solid var(--border-color);
@@ -111,6 +111,7 @@ h1 {
 .contact-primary, .contact-social {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -118,6 +119,7 @@ h1 {
     font-size: 0.95rem;
     color: var(--secondary-text);
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .contact-links {
@@ -162,6 +164,7 @@ h1 {
     align-items: center;
     gap: 6px;
     transition: transform 0.2s ease;
+    white-space: nowrap;
 }
 
 .contact-social .contact-links a:hover {
@@ -359,7 +362,7 @@ li {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .container {
         padding: 40px 20px;
     }
@@ -367,14 +370,21 @@ li {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
+        gap: 20px;
     }
     .profile-pic {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         margin-bottom: 10px;
     }
     h1 {
         font-size: 1.8rem;
+    }
+    .contact-primary, .contact-social {
+        justify-content: center;
+    }
+    .contact-links {
+        justify-content: center;
     }
     .skills-grid {
         grid-template-columns: 1fr;
